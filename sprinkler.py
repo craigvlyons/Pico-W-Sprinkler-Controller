@@ -29,20 +29,11 @@ def web_page():
         gpio_state="ON"
     else:
         gpio_state="OFF"
-    # HTML content
-    html = """<html><head> <title>Sprinkler Control</title> 
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .zone { margin-bottom: 20px; }
-        .zone-title { font-weight: bold; }
-        .schedule-form { margin-top: 10px; }
-    </style>
-    </head>
-    <body> <h1>Sprinkler Control</h1>
-    <p>Zone 1: """ + gpio_state + """</p>
-    <a href="/?zone1=on"><button>ON</button></a>
-    <a href="/?zone1=off"><button>OFF</button></a>
-    </body></html>"""
+    
+    # Read HTML content from a file
+    with open('/c:/testing ideas/Pico-W-Sprinkler-Controller/sprinkler_page.html', 'r') as f:
+        html = f.read().replace('{gpio_state}', gpio_state)
+    
     return html
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -38,16 +38,19 @@
     <p>Watering Days</p>
     <div class="week-days">         
       <div class="day-selector">
+        <div onclick="document.getElementById('monday').click()">  
           <label for="monday">Mo</label>
-          <input type="checkbox" id="monday" name="day" value="Monday"onchange="toggleIcon(this, 'icon-monday')">
+          <input type="checkbox" id="monday" name="day" value="Monday" onchange="toggleIcon(this, 'icon-monday')">
           <div id="icon-monday" class="svg-icon">
             <!-- Default icon (unchecked) is the 'X' -->
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+            <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+      </div>
+      
+    </div>
       <div class="day-selector">
           <label for="tuesday">Tu</label>
         <input type="checkbox" id="tuesday" name="day" value="Tuesday"onchange="toggleIcon(this, 'icon-tuesday')">

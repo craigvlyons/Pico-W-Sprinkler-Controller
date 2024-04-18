@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>Sprinkler System</title>
+    <style>
+        .week-days {
+          display: flex;
+          flex-direction: row;          
+          flex-wrap: wrap;
+        }
+        .day-selector {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 10px;
+        }
+
+        .day-selector label {
+          cursor: pointer;
+          display: block;
+        }
+
+        .day-selector input[type="checkbox"] {
+          display: none; /* Hide the default checkbox */
+        }
+
+        .svg-icon {
+          cursor: pointer;
+          margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Sprinkler System</h1>
+    <p>Click the button to turn on the sprinkler system.</p>
+    <button id="sprinkler_button" onclick="">Run All Sprinklers</button>
+    <p id="sprinkler_status"></p>
+    <!-- need a section that has a lable watering days, then below a button for each day of the week -->
+    <p>Watering Days</p>
+    <div class="week-days">         
+      <div class="day-selector">
+          <label for="monday">Mo</label>
+          <input type="checkbox" id="monday" name="day" value="Monday"onchange="toggleIcon(this, 'icon-monday')">
+          <div id="icon-monday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      <div class="day-selector">
+          <label for="tuesday">Tu</label>
+        <input type="checkbox" id="tuesday" name="day" value="Tuesday"onchange="toggleIcon(this, 'icon-tuesday')">
+        <div id="icon-tuesday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+    <div class="day-selector">
+        <label for="wednesday">We</label>
+        <input type="checkbox" id="wednesday" name="day" value="Wednesday"onchange="toggleIcon(this, 'icon-wednesday')">
+        <div id="icon-wednesday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+    <div class="day-selector">
+        <label for="thursday">Th</label>
+        <input type="checkbox" id="thursday" name="day" value="Thursday"onchange="toggleIcon(this, 'icon-thursday')">
+        <div id="icon-thursday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+    <div class="day-selector">
+        <label for="friday">Fr</label>
+        <input type="checkbox" id="friday" name="day" value="Friday"onchange="toggleIcon(this, 'icon-friday')">
+        <div id="icon-friday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+    <div class="day-selector">
+        <label for="saturday">Sa</label>
+        <input type="checkbox" id="saturday" name="day" value="Saturday"onchange="toggleIcon(this, 'icon-saturday')">
+        <div id="icon-saturday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+    <div class="day-selector">
+        <label for="sunday">Su</label>
+        <input type="checkbox" id="sunday" name="day" value="Sunday"onchange="toggleIcon(this, 'icon-sunday')">
+        <div id="icon-sunday" class="svg-icon">
+            <!-- Default icon (unchecked) is the 'X' -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+    </div>
+</div>
+<script>
+    // Function to toggle icons based on checkbox state
+    function toggleIcon(checkbox, iconId) {
+        const iconDiv = document.getElementById(iconId);
+        if (checkbox.checked) {
+            // Checkbox is checked, use the green check mark
+            iconDiv.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        } else {
+            // Checkbox is not checked, use the grey 'X'
+            iconDiv.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
+    }
+
+    // Initial setup to set icons on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.day-selector input[type="checkbox"]').forEach(checkbox => {
+            const iconId = 'icon-' + checkbox.id;
+            toggleIcon(checkbox, iconId);
+        });
+    });
+
+    // Add event listeners to checkboxes to change icons on click
+    document.querySelectorAll('.day-selector input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const iconId = 'icon-' + this.id;
+            toggleIcon(this, iconId);
+        });
+    });
+</script>
+    
+    <!-- i need a section for zones 1-3, each zone will have zone name / time input / button to run just that zone. -->
+<div>
+    <p>Zone 1</p>
+    <input type="text" id="zone1_time" value="10">
+    <button id="zone1_button" onclick="">Run Zone 1</button>
+    <p id="zone1_status"></p>
+</div>
+    <div>
+        <p>Zone 2</p>
+        <input type="text" id="zone2_time" value="10">
+        <button id="zone2_button" onclick="">Run Zone 2</button>
+        <p id="zone2_status"></p>
+    </div>
+
+   <div>
+       <p>Zone 3</p>
+       <input type="text" id="zone3_time" value="10">
+       <button id="zone3_button" onclick="">Run Zone 3</button>
+       <p id="zone3_status"></p>
+    </div>
+          
+
+</body>    
+</html>
